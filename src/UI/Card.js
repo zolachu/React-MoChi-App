@@ -1,16 +1,15 @@
-import Button from "react-bootstrap/Button";
+import styles from "./Card.module.css";
 import Card from "react-bootstrap/Card";
 
-const CardContainer = (props) => {
+const ContainerCard = (props) => {
   return (
-    <Card onClick={props.onClick}>
-      {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
-      <Card.Body>
-        {/* <Card.Title>Card Title</Card.Title> */}
-        {props.children}
-      </Card.Body>
-    </Card>
+    <div
+      className={`${styles.card} ${props.className}`}
+      onClick={props.onClick}
+    >
+      {props.children}
+    </div>
   );
 };
 
-export default CardContainer;
+export default ContainerCard;

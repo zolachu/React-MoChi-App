@@ -4,6 +4,7 @@
 }
 
 .navbar__brand {
-    color: white;
+    color: white !important;
     font-weight: bolder;
+    font-size: 3rem !important;
 }

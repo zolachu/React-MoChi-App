@@ -1,6 +1,5 @@
 import { useState } from "react";
 import styles from "./Flashcard.module.css";
-
 import Card from "../../UI/Card";
 import RedoIcon from "@mui/icons-material/Redo";
 import UndoIcon from "@mui/icons-material/Undo";
@@ -8,7 +7,7 @@ import UndoIcon from "@mui/icons-material/Undo";
 const Flashcard = (props) => {
   const [flip, setFlip] = useState(false);
 
-  const clickHandler = () => {
+  const clickHandler = (event) => {
     console.log("clicked");
     setFlip((prev) => {
       return !prev;
@@ -16,7 +15,8 @@ const Flashcard = (props) => {
   };
 
   return (
-    <Card className="something" onClick={clickHandler}>
+    <Card onClick={clickHandler} className={styles.flashcard}>
+      <div className={styles.language}>{flip ? "Mongolian" : "English"}</div>
       <div className={styles.content}>
         {flip ? props.card.mon : props.card.eng}
       </div>

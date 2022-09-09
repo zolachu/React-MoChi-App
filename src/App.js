@@ -22,10 +22,10 @@ function shuffleCard(array) {
 
 const App = () => {
   const DUMMY_ALPHABET = [
-    { id: 1, mon: "а", eng: "a" },
-    { id: 2, mon: "б", eng: "b" },
-    { id: 3, mon: "в", eng: "v" },
-    { id: 4, mon: "ge", eng: "ge.eng" },
+    { id: 1, mon: "ид", eng: "eat" },
+    { id: 2, mon: "яв", eng: "go" },
+    { id: 3, mon: "хий", eng: "do" },
+    { id: 4, mon: "ажилла", eng: "work" },
   ];
   const [cards, setCards] = useState(DUMMY_ALPHABET);
   const [index, setIndex] = useState(0);
@@ -58,16 +58,20 @@ const App = () => {
   };
 
   return (
-    <div className="App">
+    <div className={styles.app}>
       <Header />
       <main className={styles.main}>
-        <Flashcard
-          onClick={clickHandler}
-          card={cards[index]}
-          showNextCard={showNextCardHandler}
-          showPrevCard={showPrevCardHandler}
-        />
-        <button onClick={shuffleCardsHandler}>Shuffle Cards</button>
+        <div className={styles.container}>
+          <Flashcard
+            onClick={clickHandler}
+            card={cards[index]}
+            showNextCard={showNextCardHandler}
+            showPrevCard={showPrevCardHandler}
+          />
+          <button onClick={shuffleCardsHandler} className={styles.button}>
+            Shuffle Cards
+          </button>
+        </div>
       </main>
     </div>
   );
